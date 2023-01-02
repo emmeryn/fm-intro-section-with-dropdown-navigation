@@ -5,48 +5,62 @@ import {ReactComponent as IconReminders} from '../../images/icon-reminders.svg';
 import {ReactComponent as IconPlanning} from '../../images/icon-planning.svg';
 import './index.css';
 import {DropdownCaret} from "./DropdownCaret";
+import {Dropdown} from "./Dropdown";
+import {useState} from "react";
 
 const navigation = [
     {
-        name: 'Features',
+        label: 'Features',
         href: '#',
         dropdownItems: [
-            {icon: <IconTodo/>, label: 'Todo List'},
-            {icon: <IconCalendar/>, label: 'Calendar'},
-            {icon: <IconReminders/>, label: 'Reminders'},
-            {icon: <IconPlanning/>, label: 'Planning'},
+            {icon: <IconTodo/>, label: 'Todo List', href: '#'},
+            {icon: <IconCalendar/>, label: 'Calendar', href: '#'},
+            {icon: <IconReminders/>, label: 'Reminders', href: '#'},
+            {icon: <IconPlanning/>, label: 'Planning', href: '#'},
         ]
     },
     {
-        name: 'Company',
+        label: 'Company',
         href: '#',
         dropdownItems: [
-            {label: 'History'},
-            {label: 'Our Team'},
-            {label: 'Blog'}
+            {label: 'History', href: '#'},
+            {label: 'Our Team', href: '#'},
+            {label: 'Blog', href: '#'},
         ]
     },
     {
-        name: 'Careers',
+        label: 'Careers',
         href: '#',
     },
     {
-        name: 'About',
+        label: 'About',
         href: '#',
     },
 ]
 
 export const NavHeader = () => {
+    const [openedDropdown, setOpenedDropdown] = useState(-1);
     const logo = <div className={'logo'}>
         <a href={'#'}><Logo/></a>
     </div>;
     const navItems: JSX.Element = <div className={'navItems'}>
         {navigation.map((item, idx) => {
-            return <div className={'navItem'} key={idx}>
+            const isOpen = openedDropdown === idx;
+            const onClickHandler = () => {
+                if (isOpen) {
+                    setOpenedDropdown(-1);
+                } else {
+                    setOpenedDropdown(idx);
+                }
+            };
+            return <div className={'navItem'} key={idx}
+                        onClick={onClickHandler}
+                        onBlur={() => setOpenedDropdown(-1)}>
                 <a href={item.href}>
-                    {item.name}
-                    {item.dropdownItems ? <DropdownCaret isOpen={false}/> : null}
+                    {item.label}
+                    {item.dropdownItems ? <DropdownCaret isOpen={isOpen}/> : null}
                 </a>
+                <Dropdown items={item.dropdownItems} isOpen={isOpen}/>
             </div>
         })}
     </div>;
