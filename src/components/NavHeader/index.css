@@ -1,27 +1,31 @@
-nav {
-    display: flex;
-}
-
 .logo {
     margin-right: 3.5rem;
+}
+
+nav {
+    display: flex;
 }
 
 nav a {
     margin-right: 2rem;
 }
 
-.navItems {
-    display: flex;
-}
-
-.navItem a:visited, a:link {
+nav a:visited, a:link {
     text-decoration: none;
     color: hsl(0, 0%, 41%);
 }
 
-.navItem a:hover, a:active {
+nav a:hover, a:active {
     text-decoration: none;
     color: hsl(0, 0%, 8%)
+}
+
+.navItems {
+    display: flex;
+}
+.navItem a * {
+    margin-left: 0.375rem;
+    vertical-align: middle;
 }
 
 .userItems {

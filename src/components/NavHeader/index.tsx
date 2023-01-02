@@ -1,11 +1,39 @@
 import {ReactComponent as Logo} from '../../images/logo.svg';
+import {ReactComponent as IconTodo} from '../../images/icon-todo.svg';
+import {ReactComponent as IconCalendar} from '../../images/icon-calendar.svg';
+import {ReactComponent as IconReminders} from '../../images/icon-reminders.svg';
+import {ReactComponent as IconPlanning} from '../../images/icon-planning.svg';
 import './index.css';
+import {DropdownCaret} from "./DropdownCaret";
 
 const navigation = [
-    {name: 'Features', href: '#'},
-    {name: 'Company', href: '#'},
-    {name: 'Careers', href: '#'},
-    {name: 'About', href: '#'},
+    {
+        name: 'Features',
+        href: '#',
+        dropdownItems: [
+            {icon: <IconTodo/>, label: 'Todo List'},
+            {icon: <IconCalendar/>, label: 'Calendar'},
+            {icon: <IconReminders/>, label: 'Reminders'},
+            {icon: <IconPlanning/>, label: 'Planning'},
+        ]
+    },
+    {
+        name: 'Company',
+        href: '#',
+        dropdownItems: [
+            {label: 'History'},
+            {label: 'Our Team'},
+            {label: 'Blog'}
+        ]
+    },
+    {
+        name: 'Careers',
+        href: '#',
+    },
+    {
+        name: 'About',
+        href: '#',
+    },
 ]
 
 export const NavHeader = () => {
@@ -14,8 +42,11 @@ export const NavHeader = () => {
     </div>;
     const navItems: JSX.Element = <div className={'navItems'}>
         {navigation.map((item, idx) => {
-            return <div className={'navItem'}>
-                <a href={item.href}>{item.name}</a>
+            return <div className={'navItem'} key={idx}>
+                <a href={item.href}>
+                    {item.name}
+                    {item.dropdownItems ? <DropdownCaret isOpen={false}/> : null}
+                </a>
             </div>
         })}
     </div>;
