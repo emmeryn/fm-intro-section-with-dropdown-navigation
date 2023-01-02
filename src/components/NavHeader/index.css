@@ -6,8 +6,12 @@ nav {
     margin-right: 3.5rem;
 }
 
-.navItem {
+nav a {
     margin-right: 2rem;
+}
+
+.navItems {
+    display: flex;
 }
 
 .navItem a:visited, a:link {
@@ -18,4 +22,8 @@ nav {
 .navItem a:hover, a:active {
     text-decoration: none;
     color: hsl(0, 0%, 8%)
+}
+
+.userItems {
+    margin-left: auto;
 }
