@@ -1,6 +1,48 @@
-.btn-outline {
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 7rem;
+}
+
+main *:not(:last-child) {
+    margin-right: 3rem;
+}
+
+picture {
+    max-width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-size: 5rem;
+    color: hsl(0, 0%, 8%);
+}
+
+p {
+    font-size: 1.125rem;
+    color: hsl(0, 0%, 41%);
+    padding-bottom: 2rem;
+    width: 80%;
+}
+
+.btn-outline, .btn-solid:hover {
     border: 0.125rem solid hsl(0, 0%, 41%);
+    background-color: hsl(0, 0%, 98%);
     border-radius: 1rem;
     color: hsl(0, 0%, 41%);
     padding: 0.8rem 1.3rem;
+    max-width: fit-content;
+}
+
+.btn-solid {
+    border: 0.125rem solid hsl(0, 0%, 8%);
+    background-color: hsl(0, 0%, 8%);
+    border-radius: 1rem;
+    color: hsl(0, 0%, 98%);
+    padding: 0.8rem 1.3rem;
+    max-width: fit-content;
 }
