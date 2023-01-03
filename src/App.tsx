@@ -9,16 +9,14 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-          <NavHeader />
+        <NavHeader />
       </header>
       <main>
         <Content/>
-        <div>
-          <picture>
-              <source media="(min-width: 60rem)" srcSet={heroDesktop}/>
-              <img src={heroMobile} alt="hero image"/>
-          </picture>
-        </div>
+        <picture>
+          <source media="(min-width: 64rem)" srcSet={heroDesktop}/>
+          <img src={heroMobile} alt="hero image"/>
+        </picture>
       </main>
     </div>
   );

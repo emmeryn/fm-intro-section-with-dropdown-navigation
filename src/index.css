@@ -6,9 +6,13 @@ html {
   -moz-osx-font-smoothing: grayscale;
 }
 
-@media (min-width: 64em) {
+body {
+  padding: 1.5rem 2rem;
+  background-color: hsl(0, 0%, 98%);
+}
+
+@media(min-width: 64rem) {
   body {
-    padding: 1.5rem 2rem;
-    background-color: hsl(0, 0%, 98%);
+
   }
 }

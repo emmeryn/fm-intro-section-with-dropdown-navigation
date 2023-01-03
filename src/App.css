@@ -1,20 +1,30 @@
 main {
-    display: flex;
     align-items: center;
-    flex-direction: row;
-    padding: 7rem;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
-main *:not(:last-child) {
-    margin-right: 3rem;
+@media(min-width: 64rem) {
+    main {
+        flex-direction: row;
+        padding: 4rem 7rem;
+    }
 }
 
-picture {
-    max-width: 100%;
+@media(min-width: 64rem) {
+    main *:not(:last-child) {
+        margin-right: 3rem;
+    }
 }
 
 img {
     max-width: 100%;
+}
+
+@media(max-width: 64rem) {
+    picture {
+        margin: 1rem -2rem;
+    }
 }
 
 h1 {
