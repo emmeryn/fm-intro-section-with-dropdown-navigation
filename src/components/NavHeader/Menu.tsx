@@ -1,7 +1,7 @@
 import './Menu.css'
 import {useState} from "react";
 import {DropdownCaret} from "./DropdownCaret";
-import {Dropdown} from "./Dropdown";
+import {SubMenu} from "./SubMenu";
 type Props = {
     isOpen: boolean,
     navItems: (
@@ -18,33 +18,31 @@ type Props = {
 };
 
 export const Menu = ({ isOpen, navItems, userItems }: Props) => {
-    const [openedDropdown, setOpenedDropdown] = useState(-1);
+    const [openedDropdown, setOpenedDropdown] = useState(Array(navItems.length).fill(false));
 
-    const navItemElements = <div>
+    const NavItemElements = <div>
         {navItems?.map((item, idx) => {
-            const isOpen = openedDropdown === idx;
+            const isOpen = openedDropdown[idx];
             const onClickHandler = () => {
-                if (isOpen) {
-                    setOpenedDropdown(-1);
-                } else {
-                    setOpenedDropdown(idx);
-                }
+                const nextValue = [...openedDropdown];
+                nextValue[idx] = !isOpen;
+                setOpenedDropdown(nextValue);
             };
-            return <div className={'navItem'} key={idx}
+            return <div className={'NavItem'} key={idx}
                         onClick={onClickHandler}
-                        onBlur={() => setOpenedDropdown(-1)}>
+                        >
                 <a href={item.href}>
                     {item.label}
                     {item.dropdownItems ? <DropdownCaret isOpen={isOpen}/> : null}
                 </a>
-                <Dropdown items={item.dropdownItems} isOpen={isOpen}/>
+                <SubMenu items={item.dropdownItems} isOpen={isOpen}/>
             </div>
         })}
     </div>;
 
     return (isOpen && navItems ?
-            <div className={'menu'}>
-                {navItemElements}
+            <div className={'Menu'}>
+                {NavItemElements}
                 {userItems}
             </div> : null
     )

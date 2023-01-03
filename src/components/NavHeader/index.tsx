@@ -48,7 +48,7 @@ export const NavHeader = () => {
         <a href={'#'}><Logo/></a>
     </div>;
 
-    const navItems = <div className={'navItems'}>
+    const NavItems = <div className={'NavItems'}>
         {navigationDataItems.map((item, idx) => {
             const isOpen = openedDropdown === idx;
             const onClickHandler = () => {
@@ -58,7 +58,7 @@ export const NavHeader = () => {
                     setOpenedDropdown(idx);
                 }
             };
-            return <div className={'navItem'} key={idx}
+            return <div className={'NavItem'} key={idx}
                         onClick={onClickHandler}
                         onBlur={() => setOpenedDropdown(-1)}>
                 <a href={item.href}>
@@ -85,7 +85,7 @@ export const NavHeader = () => {
         <>
             <nav className={'NavHeader'}>
                 {logo}
-                {navItems}
+                {NavItems}
                 {userItems}
                 {menuButton}
                 {menu}

@@ -1,7 +1,7 @@
 import './index.css';
 
 export const Content = () => {
-    return <div className={'content'}>
+    return <div className={'Content'}>
         <h1>Make remote work</h1>
         <p>
             Get your team in sync, no matter your location. Streamline processes,

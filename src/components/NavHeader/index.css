@@ -20,17 +20,17 @@ nav a:hover, a:active {
     color: hsl(0, 0%, 8%)
 }
 
-.navItems {
+.NavItems {
     display: flex;
 }
 
 @media(max-width: 64rem) {
-    .NavHeader > .navItems, .NavHeader > .userItems {
+    .NavHeader > .NavItems, .NavHeader > .userItems {
         display: none;
     }
 }
 
-.navItem a * {
+.NavItem a * {
     margin-left: 0.375rem;
     vertical-align: middle;
 }
