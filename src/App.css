@@ -2,6 +2,7 @@ main {
     align-items: center;
     display: flex;
     flex-direction: column-reverse;
+    margin-top: 4rem;
 }
 
 @media(min-width: 64rem) {
