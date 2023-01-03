@@ -44,6 +44,7 @@ p {
     color: hsl(0, 0%, 41%);
     padding: 0.8rem 1.3rem;
     max-width: fit-content;
+    text-decoration: none;
 }
 
 .btn-solid {
@@ -53,4 +54,5 @@ p {
     color: hsl(0, 0%, 98%);
     padding: 0.8rem 1.3rem;
     max-width: fit-content;
+    text-decoration: none;
 }

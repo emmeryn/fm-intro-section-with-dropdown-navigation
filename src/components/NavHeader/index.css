@@ -27,12 +27,12 @@ nav a {
     margin-right: 2rem;
 }
 
-nav a:visited, a:link {
+nav a:visited, nav a:link {
     text-decoration: none;
     color: hsl(0, 0%, 41%);
 }
 
-nav a:hover, a:active {
+nav a:hover, nav a:active {
     text-decoration: none;
     color: hsl(0, 0%, 8%)
 }
