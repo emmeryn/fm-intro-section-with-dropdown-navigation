@@ -8,8 +8,9 @@ import {DropdownCaret} from "./DropdownCaret";
 import {Dropdown} from "./Dropdown";
 import {useState} from "react";
 import {MenuButton} from "./MenuButton";
+import {Menu} from "./Menu";
 
-const navigation = [
+const navigationDataItems = [
     {
         label: 'Features',
         href: '#',
@@ -47,8 +48,8 @@ export const NavHeader = () => {
         <a href={'#'}><Logo/></a>
     </div>;
 
-    const navItems: JSX.Element = <div className={'navItems'}>
-        {navigation.map((item, idx) => {
+    const navItems = <div className={'navItems'}>
+        {navigationDataItems.map((item, idx) => {
             const isOpen = openedDropdown === idx;
             const onClickHandler = () => {
                 if (isOpen) {
@@ -69,22 +70,25 @@ export const NavHeader = () => {
         })}
     </div>;
 
-    const userItems: JSX.Element = <div className={'userItems'}>
+    const userItems = <div className={'userItems'}>
         <a href={'#'}>Login</a>
         <a href={'#'} className={'btn-outline'}>Register</a>
     </div>
 
-    const menuButton: JSX.Element = <div className={'menuButton'}>
+    const menuButton= <div className={'menuButton'}>
         <MenuButton isOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}/>
     </div>
 
+    const menu = <Menu isOpen={isMenuOpen} navItems={navigationDataItems} userItems={userItems}/>
+
     return (
         <>
-            <nav>
+            <nav className={'NavHeader'}>
                 {logo}
                 {navItems}
                 {userItems}
                 {menuButton}
+                {menu}
             </nav>
         </>
     )

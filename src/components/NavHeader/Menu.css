@@ -1,0 +1,21 @@
+.menu {
+    background-color: hsl(0, 0%, 98%);
+    height: 100vh;
+    width: 67%;
+    max-width: 21rem;
+    position: fixed;
+    right: 0;
+    top: 0;
+    padding: 6rem 2rem;
+
+}
+.menu > div > * {
+    margin-bottom: 1.5rem;
+    max-width: revert;
+}
+
+.menu > .userItems {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
