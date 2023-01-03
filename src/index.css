@@ -11,8 +11,8 @@ body {
     background-color: hsl(0, 0%, 98%);
 }
 
-@media(min-width: 64rem) {
-  body {
-
-  }
+@media (max-width: 64rem) {
+    body {
+        padding: 0 0;
+    }
 }
