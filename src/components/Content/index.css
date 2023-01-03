@@ -23,3 +23,9 @@
 .clients *:not(:last-child) {
     margin-right: 1rem;
 }
+
+@media (min-width: 64rem) {
+    .clients *:not(:last-child) {
+        margin-right: 3rem;
+    }
+}
