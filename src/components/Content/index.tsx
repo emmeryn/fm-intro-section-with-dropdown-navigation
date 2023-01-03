@@ -11,7 +11,7 @@ export const Content = () => {
             Get your team in sync, no matter your location. Streamline processes,
             create team rituals, and watch productivity soar.
         </p>
-        <a href={'#'} className={'btn-solid'}>Learn more</a>
+        <a href={'#'} className={'btn-solid bold'}>Learn more</a>
         <div className={'clients'}>
             <ClientDatabiz/>
             <ClientAudiophile/>

@@ -32,6 +32,10 @@ p {
     width: 70%;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 .btn-outline, .btn-solid:hover {
     border: 0.125rem solid hsl(0, 0%, 41%);
     background-color: hsl(0, 0%, 98%);
