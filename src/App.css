@@ -11,12 +11,6 @@ main {
     }
 }
 
-@media(min-width: 64rem) {
-    main *:not(:last-child) {
-        margin-right: 3rem;
-    }
-}
-
 img {
     max-width: 100%;
 }
@@ -35,8 +29,7 @@ h1 {
 p {
     font-size: 1.125rem;
     color: hsl(0, 0%, 41%);
-    padding-bottom: 2rem;
-    width: 80%;
+    width: 70%;
 }
 
 .btn-outline, .btn-solid:hover {

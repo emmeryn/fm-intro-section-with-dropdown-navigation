@@ -1,3 +1,7 @@
+import {ReactComponent as ClientAudiophile} from '../../images/client-audiophile.svg';
+import {ReactComponent as ClientDatabiz} from '../../images/client-databiz.svg';
+import {ReactComponent as ClientMaker} from '../../images/client-maker.svg';
+import {ReactComponent as ClientMeet} from '../../images/client-meet.svg';
 import './index.css';
 
 export const Content = () => {
@@ -8,5 +12,11 @@ export const Content = () => {
             create team rituals, and watch productivity soar.
         </p>
         <a href={'#'} className={'btn-solid'}>Learn more</a>
+        <div className={'clients'}>
+            <ClientDatabiz/>
+            <ClientAudiophile/>
+            <ClientMeet/>
+            <ClientMaker/>
+        </div>
     </div>
 }

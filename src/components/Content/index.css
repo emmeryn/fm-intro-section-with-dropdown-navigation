@@ -3,9 +3,23 @@
     flex-direction: column;
 }
 
-@media(max-width: 64rem) {
+.Content * {
+    margin-bottom: 2rem;
+}
+
+@media (min-width: 64rem) {
+    .Content *:not(:last-child) {
+        margin-right: 3rem;
+    }
+}
+
+@media (max-width: 64rem) {
     .Content {
         align-items: center;
         text-align: center;
     }
+}
+
+.clients *:not(:last-child) {
+    margin-right: 1rem;
 }
