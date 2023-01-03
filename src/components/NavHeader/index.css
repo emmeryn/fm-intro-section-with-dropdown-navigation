@@ -23,11 +23,24 @@ nav a:hover, a:active {
 .navItems {
     display: flex;
 }
+
+@media(max-width: 64rem) {
+    .navItems, .userItems {
+        display: none;
+    }
+}
+
 .navItem a * {
     margin-left: 0.375rem;
     vertical-align: middle;
 }
 
-.userItems {
+.userItems, .menuButton {
     margin-left: auto;
+}
+
+@media(min-width: 64rem) {
+    .menuButton {
+        display: none;
+    }
 }

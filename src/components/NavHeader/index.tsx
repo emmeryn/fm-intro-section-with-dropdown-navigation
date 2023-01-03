@@ -7,6 +7,7 @@ import './index.css';
 import {DropdownCaret} from "./DropdownCaret";
 import {Dropdown} from "./Dropdown";
 import {useState} from "react";
+import {MenuButton} from "./MenuButton";
 
 const navigation = [
     {
@@ -39,10 +40,13 @@ const navigation = [
 ]
 
 export const NavHeader = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [openedDropdown, setOpenedDropdown] = useState(-1);
+
     const logo = <div className={'logo'}>
         <a href={'#'}><Logo/></a>
     </div>;
+
     const navItems: JSX.Element = <div className={'navItems'}>
         {navigation.map((item, idx) => {
             const isOpen = openedDropdown === idx;
@@ -64,9 +68,14 @@ export const NavHeader = () => {
             </div>
         })}
     </div>;
-    const userItems: JSX.Element = <div className={"userItems"}>
+
+    const userItems: JSX.Element = <div className={'userItems'}>
         <a href={'#'}>Login</a>
         <a href={'#'} className={'btn-outline'}>Register</a>
+    </div>
+
+    const menuButton: JSX.Element = <div className={'menuButton'}>
+        <MenuButton isOpen={isMenuOpen} onClick={() => setIsMenuOpen(!isMenuOpen)}/>
     </div>
 
     return (
@@ -75,6 +84,7 @@ export const NavHeader = () => {
                 {logo}
                 {navItems}
                 {userItems}
+                {menuButton}
             </nav>
         </>
     )
